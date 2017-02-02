@@ -14,11 +14,12 @@ $(document).ready(function () {
 
 function showRequest(formData, jqForm, options) {
     var chatBox = $('#chatBox');
-    chatBox.html(chatBox.html() + $('#message').val() + '<br>');
+    var message = '<span class="message-sent">'+'human: ' +  $('#message').val() + '</span>';
+    $(chatBox).append(message + '<br>');
 }
 
 function showResponse(responseText, statusText, xhr, $form) {
     var chatBox = $('#chatBox');
-    chatBox.html(chatBox.html() + responseText + '<br>');
+    $(chatBox).append('<span class="message-received">' +'DOCTOR: ' +  responseText + '</span><br>');
     
 }

@@ -1,9 +1,24 @@
-.content{
-   text-align: center;
+.content {
+    text-align: center;
+    margin: auto;
 }
 
-.message-sent{
+.message-sent {
     border-radius: inherit;
     background-color: #11557C;
+    border-bottom-color: white;
     color: ghostwhite;
+    text-align: left;
+}
+
+.content-input {
+    margin: auto;
+}
+
+.message-received {
+    border-radius: inherit;
+    border-bottom-color: white;
+    background-color: grey;
+    color: black;
+    text-align: right;
 }
