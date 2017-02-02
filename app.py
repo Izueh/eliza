@@ -14,10 +14,13 @@ def index():
         return "Hello %s, %s" % (request.form['name'],
                                  datetime.datetime.now().strftime("%b %d %Y, %I:%M %p"))
 
-@app.route('/DOCTOR', methods=['GET','POST'])
+
+@app.route('/DOCTOR', methods=['GET', 'POST'])
 def doctor():
     if request.method == 'GET':
         return render_template('chatbot.html')
+    if request.method == 'POST':
+        return rive.reply('test', request.form['message'])
 
 
 if __name__ == '__main__':

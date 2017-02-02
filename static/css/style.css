@@ -1,7 +1,9 @@
 .content{
-    width: 12em;
-    height: 5em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+   text-align: center;
+}
+
+.message-sent{
+    border-radius: inherit;
+    background-color: #11557C;
+    color: ghostwhite;
 }
