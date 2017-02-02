@@ -5,7 +5,8 @@
 $(document).ready(function () {
     var options = {
         beforeSubmit: showRequest,
-        success: showResponse
+        success: showResponse,
+        clearForm: true
 
     };
     $("#chatForm").ajaxForm(options);
@@ -13,11 +14,11 @@ $(document).ready(function () {
 
 function showRequest(formData, jqForm, options) {
     var chatBox = $('#chatBox');
-    chatBox.val(chatBox.val() + $('#message').val()+'\n' )
+    chatBox.html(chatBox.html() + $('#message').val() + '<br>');
 }
 
 function showResponse(responseText, statusText, xhr, $form) {
     var chatBox = $('#chatBox');
-    chatBox.val(chatBox.val() + responseText +'\n' )
+    chatBox.html(chatBox.html() + responseText + '<br>');
     
 }

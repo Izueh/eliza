@@ -10,11 +10,9 @@
 
 </head>
 <body>
-    <form id="chatForm" n class="pure-form pure-form-stacked" action="/DOCTOR" method="POST">
-        <fieldset>
-            <textarea id="chatBox" rows="10" cols="50" readonly></textarea>
+    <div id="chatBox" class="chat-box" ></div>
+    <form id="chatForm" n class="pure-form" action="/DOCTOR" method="POST">
             <input type="text" id="message" name="message" placeholder="message"/>
-        </fieldset>
     </form>
     <script src={{ url_for('static', filename='js/jquery-3.1.1.js') }} ></script>
     <script src={{ url_for('static', filename='js/jquery.form.js') }}></script>
