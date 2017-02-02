@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor</title>
+    <link href={{ url }}/>
+    <script src={{ url_for('static', filename='/js/jquery-3.1.1.js') }} ></script>
+    <script src={{ url_for('static', filename='js/jquery.form.js' }}></script>
+    <script>
+        $(document).ready(function () {
+            $(#chat).ajaxForm
+        })
+    </script>
+
+
+</head>
+<body>
+    <form id="chat" class="pure-form pure-form-stacked" action="" method="POST">
+        <fieldset>
+            <textarea rows="10" cols="50" readonly></textarea>
+            <input type="text"  />
+        </fieldset>
+    </form>
+</body>
+</html>

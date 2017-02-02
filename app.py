@@ -1,4 +1,5 @@
 from flask import Flask, url_for, request, render_template, send_from_directory
+from scripts.doctor.doctor import rive
 import datetime
 
 app = Flask(__name__)
@@ -7,14 +8,16 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        return send_from_directory('static/', filename='index.html')
+
+        return render_template('index.html')
     elif request.method == 'POST':
-        return "Hello %s, $s" % request.form['name'], datetime.date
+        return "Hello %s, %s" % (request.form['name'],
+                                 datetime.datetime.now().strftime("%b %d %Y, %I:%M %p"))
 
-
-@app.route('/DOCTOR')
+@app.route('/DOCTOR', methods=['GET','POST'])
 def doctor():
-    return ''
+    if request.method == 'GET':
+        return render_template('chatbot.html')
 
 
 if __name__ == '__main__':
