@@ -11,7 +11,7 @@ $(document).ready(function () {
         };
         $.ajax({
             type: "POST",
-            url: "/eliza/DOCTOR",
+            url: "/eliza/DOCTOR/",
             dataType: "json",
             data: request,
             success: function (data) {
