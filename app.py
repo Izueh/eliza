@@ -15,8 +15,9 @@ def index():
 @app.route('/eliza/DOCTOR', methods=['POST'], )
 def doctor():
     if request.method == 'POST':
-        return jsonify(eliza=rive.reply('dev', request.form['human']))
-
+        json = request.get_json()
+        return jsonify(eliza=rive.reply('dev', json['human']))
 
 if __name__ == '__main__':
     app.run()
+

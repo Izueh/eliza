@@ -11,9 +11,10 @@ $(document).ready(function () {
         };
         $.ajax({
             type: "POST",
+            contentType: "application/json",
             url: "/eliza/DOCTOR/",
             dataType: "json",
-            data: request,
+            data: JSON.stringify(request),
             success: function (data) {
                 showResponse(data);
                 document.getElementById('chatForm').reset();
