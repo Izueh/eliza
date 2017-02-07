@@ -4,38 +4,45 @@
     <title>Eliza</title>
     <link rel="stylesheet" href={{ url_for('static',filename='css/pure.css') }} type="text/css"/>
     <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
 
 <div class="pure-g">
     <div class="pure-u-1 header">
-        <h1>Eliza Welcomes you</h1>
+        {% if not name %}
+            <h1 style="color: white">Hi I'm Eliza</h1>
+        {% else %}
+            <h1 style="color: white">What do you want to talk about?</h1>
+        {% endif %}
 
+    </div>
+    <div class="pure-u-1">
         {% if not name %}
             <form class="pure-form" method="post" action="/eliza">
                 <fieldset>
-                    <legend>What is your name?</legend>
+                    <legend style="color: black">What is your name?</legend>
                     <input class="content-input" type="text" placeholder="name" name="name">
                     <input type="submit" class="pure-button pure-button-primary">
                 </fieldset>
             </form>
 
         {% else %}
-            <p>
-                Welcome <b>{{ name }}</b>, {{ date }}
+            <p style="color: black">
+                Hello <b>{{ name }}</b>, {{ date }}
             </p>
         {% endif %}
     </div>
     {% if name %}
-        <div class="pure-u-1">
-        <div class="chatbox" id="chatBox"></div>
 
-        <form id="chatForm" class="pure-form">
-            <input type="text" id="message" name="message" placeholder="message"/>
-        </form>
-        <script src={{ url_for('static', filename='js/jquery-3.1.1.js') }}></script>
-        <script src={{ url_for('static', filename='js/jquery.form.js') }}></script>
-        <script src={{ url_for('static', filename='js/chatform.js') }}></script>
+        <div class="pure-u-1">
+            <div class="chatbox" id="chatBox"></div>
+            <form id="chatForm" class="pure-form">
+                <input type="text" id="message" name="message" placeholder="message"/>
+            </form>
+            <script src={{ url_for('static', filename='js/jquery-3.1.1.js') }}></script>
+            <script src={{ url_for('static', filename='js/jquery.form.js') }}></script>
+            <script src={{ url_for('static', filename='js/chatform.js') }}></script>
         </div>
     {% endif %}
 

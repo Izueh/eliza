@@ -8,11 +8,10 @@ app = Flask(__name__)
 
 @app.route('/eliza', methods=['GET', 'POST'])
 def index():
-
     if request.method == 'GET':
         return render_template('index.html')
     elif request.method == 'POST':
-        return render_template('index.html',name=request.form["name"], date=datetime.datetime.now().strftime("%b %d %Y, %X"))
+        return render_template('index.html',name=request.form["name"], date=datetime.datetime.now().strftime("%b %d %Y %X"))
 
 
 @app.route('/eliza/DOCTOR', methods=['POST'])

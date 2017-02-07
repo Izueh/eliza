@@ -1,9 +1,22 @@
-
+.h1{
+    font-family: 'Roboto',sans-serif;
+}
+.p{
+    font-family: 'Roboto', sans-serif;
+}
 .chatbox {
-    width: 40em;
+    width: 20em;
     height: 30em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     border: 1px solid black;
     margin: 0 auto;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    margin-top: 2em;
 }
 
 .header{
@@ -12,23 +25,9 @@
     text-align: center;
 }
 
-
-.message-sent {
-    border-radius: inherit;
-    background-color: #11557C;
-    border-bottom-color: white;
-    color: ghostwhite;
-    text-align: left;
-}
-
-.content-input {
-    margin: auto;
-}
-
-.message-received {
-    border-radius: inherit;
-    border-bottom-color: white;
-    background-color: grey;
+.message{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    padding: 1em 1em 1em 1em;
     color: black;
-    text-align: right;
 }

@@ -16,6 +16,7 @@ $(document).ready(function () {
             data: request,
             success: function (data) {
                 showResponse(data);
+                document.getElementById('chatForm').reset();
             }
         });
     })
@@ -24,11 +25,12 @@ $(document).ready(function () {
 
 function showRequest() {
     var chatBox = $('#chatBox');
-    var message = 'human: ' + $('#message').val();
+    var message = '<span class="message">'+'human: ' + $('#message').val()+'</span>';
     $(chatBox).append(message + '<br>');
 }
 
 function showResponse(responseText) {
     var chatBox = $('#chatBox');
-    $(chatBox).append('eliza:' + responseText.eliza + '<br>');
+    var message = '<span class="message">' + 'eliza: '+ responseText.eliza + '</span>';
+    $(chatBox).append(message + '<br>');
 }
