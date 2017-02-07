@@ -7,14 +7,38 @@
 </head>
 <body>
 
-<div class="content">
-    <form class="pure-form" method="post" action="/">
-        <fieldset>
-            <legend>Enter Your Name</legend>
-            <input class="content-input" type="text" placeholder="name" name="name">
-            <input type="submit" class="pure-button pure-button-primary">
-        </fieldset>
-    </form>
+<div class="pure-g">
+    <div class="pure-u-1 header">
+        <h1>Eliza Welcomes you</h1>
+
+        {% if not name %}
+            <form class="pure-form" method="post" action="/eliza">
+                <fieldset>
+                    <legend>What is your name?</legend>
+                    <input class="content-input" type="text" placeholder="name" name="name">
+                    <input type="submit" class="pure-button pure-button-primary">
+                </fieldset>
+            </form>
+
+        {% else %}
+            <p>
+                Welcome <b>{{ name }}</b>, {{ date }}
+            </p>
+        {% endif %}
+    </div>
+    {% if name %}
+        <div class="pure-u-1">
+        <div class="chatbox" id="chatBox"></div>
+
+        <form id="chatForm" class="pure-form">
+            <input type="text" id="message" name="message" placeholder="message"/>
+        </form>
+        <script src={{ url_for('static', filename='js/jquery-3.1.1.js') }}></script>
+        <script src={{ url_for('static', filename='js/jquery.form.js') }}></script>
+        <script src={{ url_for('static', filename='js/chatform.js') }}></script>
+        </div>
+    {% endif %}
+
 </div>
 </body>
 </html>
