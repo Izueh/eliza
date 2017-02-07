@@ -25,12 +25,12 @@ $(document).ready(function () {
 
 function showRequest() {
     var chatBox = $('#chatBox');
-    var message = '<span class="message">'+'human: ' + $('#message').val()+'</span>';
+    var message = '<span class="message">'+'Human: ' + $('#message').val()+'</span>';
     $(chatBox).append(message + '<br>');
 }
 
 function showResponse(responseText) {
     var chatBox = $('#chatBox');
-    var message = '<span class="message">' + 'eliza: '+ responseText.eliza + '</span>';
+    var message = '<span class="message">' + 'Eliza: '+ responseText.eliza + '</span>';
     $(chatBox).append(message + '<br>');
 }
